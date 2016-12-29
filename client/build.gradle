@@ -1,0 +1,35 @@
+import java.awt.Desktop
+
+apply plugin: 'application'
+
+mainClassName = 'com.charlestati.jcoinche.Client'
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    baseName = 'jcoinche-client'
+    manifest {
+        attributes 'Main-Class': "$mainClassName"
+    }
+}
+
+dependencies {
+    compile project(':common')
+    compile group: 'io.netty', name: 'netty-all', version: '4.1.6.Final'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task 'package'(type: Copy, dependsOn: 'build') {
+    from(project.jar)
+    into project.file('../target')
+}
+
+task cover(dependsOn: 'test') {
+    doLast {
+        File index = file('build/reports/tests/test/index.html')
+        String path = 'file://' + index.getAbsolutePath().toString()
+        println('Report available here: ' + path)
+        Desktop.desktop.browse path.toURI()
+    }
+}

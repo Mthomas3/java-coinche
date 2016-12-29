@@ -1,0 +1,4 @@
+task cleanJars(type: Delete) {
+    delete '../target'
+    followSymlinks = true
+}

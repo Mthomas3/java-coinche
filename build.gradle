@@ -1,0 +1,15 @@
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    clean.finalizedBy ":common:cleanJars"
+}
+
+task "package" (dependsOn: [":client:package", ":server:package"])
+
+task cover(dependsOn: [":client:cover", ":server:cover"])
