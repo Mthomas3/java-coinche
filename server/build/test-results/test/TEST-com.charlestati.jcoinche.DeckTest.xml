@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.charlestati.jcoinche.DeckTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-11-27T21:43:59" hostname="thomass-macbook-pro.home" time="0.003">
+<testsuite name="com.charlestati.jcoinche.DeckTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-12-29T15:44:22" hostname="Charless-MacBook-Pro.local" time="0.003">
   <properties/>
-  <testcase name="checkSize" classname="com.charlestati.jcoinche.DeckTest" time="0.002"/>
+  <testcase name="checkSize" classname="com.charlestati.jcoinche.DeckTest" time="0.003"/>
   <testcase name="checkShuffle" classname="com.charlestati.jcoinche.DeckTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
